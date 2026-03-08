@@ -1,7 +1,7 @@
 class Yoyo < Formula
   desc "Code intelligence MCP server — 28 tools for AI agents to read and edit any codebase"
   homepage "https://github.com/avirajkhare00/yoyo"
-  version "1.0.3"
+  version "1.0.2"
   license "MIT"
 
   on_macos do
