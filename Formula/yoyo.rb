@@ -1,20 +1,20 @@
 class Yoyo < Formula
   desc "Code intelligence MCP server — 28 tools for AI agents to read and edit any codebase"
   homepage "https://github.com/avirajkhare00/yoyo"
-  version "1.3.2"
+  version "1.3.3"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/avirajkhare00/yoyo/releases/download/v#{version}/yoyo-aarch64-apple-darwin.tar.gz"
-      sha256 "3707f6706f7b3e08f3ecd442c49fb86b89c03eec9a285d60f4d1229f23ab89fb"
+      sha256 "4e23860ada5011b3a3c6cbafcf6fdfd6f402fb6e3d9d9c0a41d4c39b07a763d7"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
       url "https://github.com/avirajkhare00/yoyo/releases/download/v#{version}/yoyo-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "776a3bd71f2c2b77852dc2e182ac859763a52515e1660ea31e01b9424136b753"
+      sha256 "231bc53422c834f50e59fc9ba70d89ac8612a0dc55986582aa75d5a37c4990e1"
     end
   end
 
