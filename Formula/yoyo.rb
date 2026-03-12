@@ -7,14 +7,14 @@ class Yoyo < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/avirajkhare00/yoyo/releases/download/v#{version}/yoyo-aarch64-apple-darwin.tar.gz"
-      sha256 "86b333c749d7d5b702d7f9fb7274070252fb323ae7ce6c1b6afbcc4bcef100f4"
+      sha256 "c19fb072465a01941da5e52a5c382565e099127f6494f324a96ff46ce10917ff"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
       url "https://github.com/avirajkhare00/yoyo/releases/download/v#{version}/yoyo-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "83d651e816a241d67648e526d5a4ef2f9320e2e6a5a7a459c8432c2ebc2be63b"
+      sha256 "569b9c951c27769a2a6933ee0ff0979d3465c7fe7d8b403093d131fda8333753"
     end
   end
 
