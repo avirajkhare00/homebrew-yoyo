@@ -24,21 +24,40 @@ class Yoyo < Formula
 
   def caveats
     <<~EOS
-      After installing, index your project:
-        yoyo bake --path /path/to/your/project
+      Getting started:
 
-      Then add yoyo to your Claude Code MCP config (~/.claude/settings.json):
-        {
-          "mcpServers": {
-            "yoyo": {
-              "type": "stdio",
-              "command": "#{HOMEBREW_PREFIX}/bin/yoyo",
-              "args": ["--mcp-server"]
-            }
-          }
-        }
+        1. Index your project
+           yoyo index --path /path/to/your/project
 
-      Full setup guide: https://github.com/avirajkhare00/yoyo#setup-4-steps
+        2. Connect to Claude Code
+           Add to ~/.claude/settings.json:
+
+           {
+             "mcpServers": {
+               "yoyo": {
+                 "type": "stdio",
+                 "command": "#{HOMEBREW_PREFIX}/bin/yoyo",
+                 "args": ["--mcp-server"]
+               }
+             }
+           }
+
+        3. Add the hook (makes Claude prefer yoyo tools over grep/cat)
+           In your project: .claude/settings.local.json
+
+           {
+             "hooks": {
+               "UserPromptSubmit": [{
+                 "hooks": [{
+                   "type": "command",
+                   "command": "echo '[yoyo] Use supersearch not grep. Use symbol+include_source not cat.'"
+                 }]
+               }]
+             }
+           }
+
+        4. Restart Claude Code, then start a session
+           Claude calls llm_instructions automatically on first contact.
     EOS
   end
 
