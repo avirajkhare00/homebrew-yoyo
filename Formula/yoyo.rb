@@ -12,6 +12,10 @@ class Yoyo < Formula
       url "https://github.com/avirajkhare00/yoyo/releases/download/v#{version}/yoyo-x86_64-apple-darwin.tar.gz"
       sha256 "754219afba74c56fcaceb1fb80638db81deeee324625e5f08b53b5d3856df078"
     end
+    if Hardware::CPU.intel?
+      url "https://github.com/avirajkhare00/yoyo/releases/download/v#{version}/yoyo-x86_64-apple-darwin.tar.gz"
+      sha256 "0000000000000000000000000000000000000000000000000000000000000000"
+    end
   end
 
   on_linux do
